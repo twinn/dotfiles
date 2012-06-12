@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/tony/code/unfunneled/app'
 let g:netrw_dirhist_2='/home/tony/code/unfunneled/app/assets'
 let g:netrw_dirhist_3='/home/tony/code/unfunneled/app/assets/javascripts'
+let g:netrw_dirhist_4='/Users/tony/dotfiles/vim/bundle/Command-T'
