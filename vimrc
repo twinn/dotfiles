@@ -308,9 +308,10 @@ function! RunTestFile(...)
     else
         let command_suffix = ""
     endif
+    echo expand("%")
 
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_spec.coffee\)$') != -1
     if in_test_file
         call SetTestFile()
     elseif !exists("t:grb_test_file")
@@ -340,11 +341,16 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
         exec ":!script/features " . a:filename
+    elseif match(a:filename, '\.coffee$') != -1
+        exec ":!bundle exec jasmine-headless-webkit"
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
             exec ":!bundle exec rspec --color " . a:filename
+            if a:filename == ''
+              exec ":!bundle exec jasmine-headless-webkit"
+            end
         else
             exec ":!rspec --color " . a:filename
         end
