@@ -12,9 +12,9 @@ set hidden
 " remember more commands and search history
 set history=10000
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
 set laststatus=2
 set showmatch
@@ -23,13 +23,14 @@ set hlsearch
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 " highlight current line
-set cursorline
+"set cursorline"
 set cmdheight=2
 set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
 set winwidth=79
 set shell=bash
+set number
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
@@ -97,7 +98,7 @@ augroup END
 :syntax enable
 :set background=dark
 :color grb256
-:colorscheme solarized
+:colorscheme getafe
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -342,14 +343,14 @@ function! RunTests(filename)
     if match(a:filename, '\.feature$') != -1
         exec ":!script/features " . a:filename
     elseif match(a:filename, '\.coffee$') != -1
-        exec ":!bundle exec jasmine-headless-webkit"
+        exec ":!bundle exec jasmine-headless-webkit --colors " . a:filename
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
+            exec ":!bundle exec rspec --color -d " . a:filename
             if a:filename == ''
-              exec ":!bundle exec jasmine-headless-webkit"
+              exec ":!bundle exec jasmine-headless-webkit --colors"
             end
         else
             exec ":!rspec --color " . a:filename
