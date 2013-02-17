@@ -18,6 +18,7 @@ Bundle 'cstrahan/grb256'
 Bundle 'larssmit/vim-getafe'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'davidoc/taskpaper.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
