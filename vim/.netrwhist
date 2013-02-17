@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/tony/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/devise-1.4.3/app/controllers'
-let g:netrw_dirhist_2='/Users/tony/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/devise-1.4.3/app/controllers/devise'
-let g:netrw_dirhist_3='/Users/tony/Code/code_school_course'
-let g:netrw_dirhist_4='/Users/tony/Code/code_school_course/codeschool-omniauth'
-let g:netrw_dirhist_5='/Users/tony/Code/code_school_course/codeschool-omniauth/lib'
-let g:netrw_dirhist_6='/Users/tony/Documents/CityBible'

@@ -1,7 +1,24 @@
-" This is Gary Bernhardt's .vimrc file
+" This is Tony Winn's .vimrc file, stolen from Gary Bernhardt's .vimrc file
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
-call pathogen#runtime_append_all_bundles()
+filetype off
+syntax on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-markdown'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'telamon/vim-color-github'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'larssmit/vim-getafe'
+Bundle 'wgibbs/vim-irblack'
+Bundle 'davidoc/taskpaper.vim'
+
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -346,16 +363,11 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
         exec ":!script/features " . a:filename
-    elseif match(a:filename, '\.coffee$') != -1
-        exec ":!bundle exec jasmine-headless-webkit --colors " . a:filename
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
             exec ":!bundle exec rspec --color -d " . a:filename
-            if a:filename == ''
-              exec ":!bundle exec jasmine-headless-webkit --colors"
-            end
         else
             exec ":!rspec --color " . a:filename
         end
