@@ -1,0 +1,11 @@
+Installation tips
+
+To install vundle
+
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+Then :BundleInstall from within vim
+
+For command-t to work you'll need to cd into it's bundle and run
+
+rake make
