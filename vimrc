@@ -2,22 +2,30 @@
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
 filetype off
-syntax on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+
+"navigation
+Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-markdown'
 Bundle 'git://git.wincent.com/command-t.git'
+
+"syntax
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'davidoc/taskpaper.vim'
+Bundle 'tpope/vim-markdown'
+
+"colors
 Bundle 'telamon/vim-color-github'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'cstrahan/grb256'
 Bundle 'larssmit/vim-getafe'
 Bundle 'wgibbs/vim-irblack'
-Bundle 'davidoc/taskpaper.vim'
+
+"misc
 Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
