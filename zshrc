@@ -37,11 +37,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 eval "$(rbenv init -)"
 alias rit='ruby -I"lib:test"'
 alias be='bundle exec'
 alias g='git'
 alias gs='git status'
+alias gp='git pull --rebase origin'
 ey='EYRC=.eyrc ey'

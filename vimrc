@@ -3,6 +3,7 @@
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=$GOROOT/misc/vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -17,6 +18,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'tpope/vim-markdown'
+Bundle 'jnwhiteh/vim-golang'
 
 "colors
 Bundle 'telamon/vim-color-github'
