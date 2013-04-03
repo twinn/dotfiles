@@ -38,6 +38,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+export EDITOR=vim
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 eval "$(rbenv init -)"
 alias rit='ruby -I"lib:test"'
 alias be='bundle exec'
