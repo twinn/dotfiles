@@ -28,6 +28,7 @@ Bundle 'larssmit/vim-getafe'
 Bundle 'wgibbs/vim-irblack'
 
 "misc
+Bundle 'tpope/vim-dispatch'
 Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
@@ -374,14 +375,14 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
+        exec ":Dispatch script/features " . a:filename
     else
         if filereadable("script/test")
-            exec ":!script/test " . a:filename
+            exec ":Dispatch script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color -d " . a:filename
+            exec ":Dispatch bundle exec rspec --color -d " . a:filename
         else
-            exec ":!rspec --color " . a:filename
+            exec ":Dispatch rspec --color " . a:filename
         end
     end
 endfunction
