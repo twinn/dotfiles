@@ -30,6 +30,7 @@ Bundle 'wgibbs/vim-irblack'
 "misc
 Bundle 'tpope/vim-dispatch'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'suan/vim-instant-markdown'
 
 filetype plugin indent on
 
@@ -63,7 +64,7 @@ set switchbuf=useopen
 set numberwidth=5
 set showtabline=2
 set winwidth=79
-set shell=bash
+set shell=bash\ -i
 set number
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -380,7 +381,7 @@ function! RunTests(filename)
         if filereadable("script/test")
             exec ":Dispatch script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":Dispatch bundle exec rspec --color -d " . a:filename
+            exec ":Dispatch bundle exec rspec --color " . a:filename
         else
             exec ":Dispatch rspec --color " . a:filename
         end
