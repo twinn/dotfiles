@@ -32,10 +32,9 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git rbenv)
 
 source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/local/share/npm/bin:$PATH
 export EDITOR=vim
@@ -47,3 +46,5 @@ alias g='git'
 alias gs='git status'
 alias gp='git pull --rebase origin'
 ey='EYRC=.eyrc ey'
+#Keep zsh from renaming tmux titles
+DISABLE_AUTO_TITLE=true
