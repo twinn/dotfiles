@@ -31,6 +31,7 @@ Bundle 'wgibbs/vim-irblack'
 Bundle 'tpope/vim-dispatch'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 
@@ -59,10 +60,9 @@ set foldlevel=1         "this is just what i use
 set ignorecase smartcase
 " highlight current line
 "set cursorline"
-set cmdheight=2
+set cmdheight=1
 set switchbuf=useopen
 set numberwidth=5
-set showtabline=2
 set winwidth=79
 set shell=bash
 "set number
@@ -155,6 +155,7 @@ imap <c-l> <space>=><space>
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 " Clear the search buffer when hitting return
+map <leader>= :Tabularize /
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
 endfunction
